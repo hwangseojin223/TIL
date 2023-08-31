@@ -17,10 +17,10 @@ else:
     <코드 블럭>
 ```
 
-`expression` : 참/거짓에 대한 조건식
-조건이 참인 경우 `:` 이후의 문장 수행
-조건이 거짓인 경우 `else:` 이후의 문장을 수행
-여러 개의 `elif` 가 있을 수 있고 else는 선택적으로 사용
+- `expression` : 참/거짓에 대한 조건식
+- 조건이 참인 경우 `:` 이후의 문장 수행
+- 조건이 거짓인 경우 `else:` 이후의 문장을 수행
+- 여러 개의 `elif` 가 있을 수 있고 else는 선택적으로 사용
 
 ## 1.2 elif 복수 조건
 
@@ -35,7 +35,8 @@ else:
 삼항 연산자(Ternary Operator)라고 부르기도 함
 
 활용법
-`true value if <조건식> else false_value`
+
+- `true value if <조건식> else false_value`
 
 # 02. 반복문(Loop Statement)
 
@@ -43,7 +44,8 @@ else:
 
 while문은 조건식이 참(True)인 경우 반복적으로 코드를 실행
 
-```while <조건식>:
+```python
+while <조건식>:
     <코드 블럭>
 ```
 
