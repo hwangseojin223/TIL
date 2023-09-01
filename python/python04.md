@@ -40,7 +40,7 @@ else:
 
 # 02. 반복문(Loop Statement)
 
-## While 반복문
+## 2.1 while 반복문
 
 while문은 조건식이 참(True)인 경우 반복적으로 코드를 실행
 
@@ -50,3 +50,116 @@ while <조건식>:
 ```
 
 반드시 종료조건을 설정해야 한다.
+
+## 2.2 for 문
+
+시퀀스(string, tuple, list, range)를 포함한 순회가능한 객체(iterable)의 요소들을 순회
+
+```python
+for <임시변수> in <순회가능한데이터(iterable)>:
+    <코드블럭>
+```
+
+### 2.2.1 문자열(String) 순회
+
+`range(문자열의 길이)`
+
+### 2.2.2 딕셔너리 순회 (반목문 활용)
+
+```python
+grades = {'john': 80, 'eric': 90}
+
+for key in grades:
+    print(key) # john eric
+    print(grades[key]) # 80 90
+```
+
+`dictionary`에서 `for`를 활용하는 4가지 방법
+
+```python
+#1 dictionary 순회 (key 활용)
+for key in dict:
+    print(key)
+    print(dict[key])
+
+#2 '.keys()' 활용
+for key in dict.keys():
+    print(key)
+    print(dict[key])
+
+#3 '.values()' 활용
+# 이 경우 key는 출력할 수 없음
+for val in dict.values():
+    print(val)
+
+#4'.items()' 활용
+for key, val in dict.items():
+    print(key, val)
+```
+
+### 2.2.3 enumerate()
+
+인덱스(index)와 값(value)을 함께 활용 가능
+
+```python
+members = ['a', 'b', 'c']
+
+for idx, member in enumerate(members):
+    print(idx, member)
+# 출력
+# 0 a
+# 1 b
+# 2 c
+
+list(enumerate(members))
+# 출력
+# [(0, '민수'), (1, '영희'), (2, '철수')]
+```
+
+### 2.2.4 List Comprehension
+
+[expression for 변수 in iterable]
+
+```python
+#1~3까지의 숫자로 만든 세제곱 리스트
+
+numbers = [1, 2, 3]
+cubic_list = [num **  for num in numbers]
+
+#10*10 체스판
+
+matrix = []
+for _ in range(n):
+    matrix.append([0]*10)
+```
+
+### 2.2.5 Dictionary Comprehension
+
+{키: 값 for 요소 in iterable}
+
+```python
+#1~3의 세제곱 딕셔너리
+
+cubic_dict = {i: i**3 for i in range(1, 4)}
+```
+
+## 2.3 반복제어(break, continue, for-else)
+
+`break` : 반복문을 종료
+
+`continue` : continue 이후의 코드를 수행하지 않고 다음 요소부터 계속하여 반복을 수행
+
+`pass`: 아무것도 하지 않음, 자리를 채우는 용도
+
+`else`: 끝까지 반복문을 실행한 이유에 실행
+
+- 반복문이 `break` 문으로 종료될 때는 실행되지 않음(즉, `break`를 통해 중간에 종료되지 않은 경우만 실행)
+- 즉, `break`가 없는 `for`문에서는 사용할 이유 X
+  ```python
+  for char in 'apple':
+     if char == 'b':
+         print('b!!!')
+         break
+  else:
+     print('b가 없습니다.')
+  ```
