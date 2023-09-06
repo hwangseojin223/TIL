@@ -99,3 +99,78 @@ my_func(1, 2, True, False, 'a', x=1, y=2, z=3)
 # 출력
 # 1 2 (True, False, 'a') {'x': 1, 'y': 2, 'z': 3}
 ```
+
+# 02. 함수 Function II
+
+## 2.1 함수와 스코프(scope)
+
+함수는 코드 내부에 스코프를 생성
+
+- `전역 스코프(global scope)` : 코드 어디에서든 참조할 수 있는 공간
+- `지역 스코프(local scope)`: 함수가 만든 스코프로 함수 내부에서만 참조할 수 있는 공간
+- `전역 변수(global variable)`: 전역 스코프에 정의된 변수
+- `지역 변수(local variable)`: 로컬 스코프에 정의된 변수
+
+1. 함수 밖의 변수(global var), 함수 안의 변수(local var)
+   - 인자는 함수 안의 변수 취급
+2. 함수 안(local scope)에서는 함수 밖(global scope) 에 접근 가능
+   - 함수 안에 `a`가 없으면, 함수 밖에서 `a`를 찾음
+   - 만약, 함수 안에 `a`가 있다면, 함수 밖 `a`는 접근 불가능
+3. 함수 밖에서는 함수 안에 접근 불가능
+
+## 2.2 이름 검색(resolution) 규칙
+
+파이썬에서 사용되는 이름(식별자)들은 이름공간(namespace)에 저장
+LEGB Rule
+
+- Local scope: 함수
+- Enclosed scope: 특정 함수의 상위 함수
+- Global scope: 함수 밖의 변수 혹은 import된 모듈
+- Built-in scope: 파이썬안에 내장되어 있는 함수 또는 속성
+
+# 03. 재귀 함수(recursive function)
+
+함수 내부에서 자기 자신을 호출하는 함수
+반드시, base case가 존재
+**팩토리얼**
+
+```python
+def factorial(n):
+    # Base Case
+    if n == 1:
+        return 1
+    return n * factorial(n-1)
+```
+
+**피보나치**
+
+```python
+def fib(n):
+    if n < 2:
+        return n
+    return fib(n-1) + fib(n-2)
+```
+
+## 3.1 함수 응용
+
+**`map(function, iterable)`**
+
+- 순회 가능한 데이터 구조(iterable)의 모든 요소에 function을 적용한 후 그 결과를 돌려줌
+- `return`은 `map_object` 형태
+
+```python
+list(map(int, ['1', '2', '3'])) #[1, 2, 3]
+```
+
+**lambda 함수**
+
+- 표현식을 계산한 결과 값을 반환하는 함수
+- 이름 없는 함수(익명함수)
+- return 문을 가질 수 없고, 간단한 조건문 외의 구성이 어려움
+
+```python
+f1 = lambda x, y : x + y
+
+print(f1(3, 4)) # 7
+(lambda x, y : x + y)(1, 3)# 4
+```
