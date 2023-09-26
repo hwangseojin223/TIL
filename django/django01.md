@@ -21,7 +21,7 @@ python manage.py startapp first_app
 
 ### 1. intro/intro/settings.py
 
-1.  `INSTALLED_APPS = []` 에 `path('first_app/', include('first_app.urls'))`, 와 같은 형식으로 등록을 한다.
+1.  `INSTALLED_APPS = []` 에 `'first_app',`, 와 같은 형식으로 등록을 한다.
 
 ### 2. intro/intro/urls.py
 
