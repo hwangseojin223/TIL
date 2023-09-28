@@ -133,7 +133,7 @@ class Migration(migrations.Migration):
 ### DMBS
 
 Database Management System: 데이터베이스를 관리하고 운영하는 소프트웨어  
-역할: 데이터베이스에 여러 사용자 혹은 응용 프로그램이 데이터를 공유 및 접근할 수 있도록 함
+역할: 데이터베이스에 여러 사용자 혹은 응용 프로그램이 데이터를 공유 및 접근할 수 있도록 한다.
 
 - MySQL
 - Oracle
