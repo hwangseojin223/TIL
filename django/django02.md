@@ -135,3 +135,7 @@ def pong(request):
    ```
 
 을 작성해서 ping.py로 user_input을 받고 pong.py에 출력시킬 수 있다.
+
+## 4. 다른 port로 server 돌리는 명령어
+
+`python manage.py runserver 8001`
