@@ -6,6 +6,7 @@
 django-admin startproject MODEL  
 python manage.py startapp students  
 실행 후  
+settings.py 에 출생신고
 """
 
 ### 1. model/model/students/models.py
