@@ -9,7 +9,7 @@ python manage.py startapp students
 settings.py 에 출생신고
 """
 
-### 1. model/model/students/models.py
+### 1. model/students/models.py
 
     ```python
     class Student(models.Model):
