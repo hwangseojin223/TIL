@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block content %}
+<h1>{{student.name}}</h1>
+<p>{{student.age}}</p>
+<p>{{studnet.major}}</p>
+<p>{{studnet.description}}</p>
+<div>
+  <a href="/school/{{student.pk}}/edit/"><button>Edit</button></a>
+</div>
+<div>
+  <a href="/school/{{student.pk}}/delete/"><button>Delete</button></a>
+</div>
+{% endblock content%}
