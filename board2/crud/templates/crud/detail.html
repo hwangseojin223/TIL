@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block content %}
+<h1>{{student.name}}</h1>
+<p>{{student.age}}</p>
+<p>{{studnet.major}}</p>
+<p>{{studnet.description}}</p>
+<div>
+  <a href="{%url 'crud:edit' student.pk%}"><button>Edit</button></a>
+</div>
+<div>
+  <a href="{% url 'crud:delete' student.pk %}"><button>Delete</button></a>
+</div>
+{% endblock content%}

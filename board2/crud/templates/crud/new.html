@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block content %}
+<h1>new</h1>
+
+<form action="{% url "crud:create" %}">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" />
+  </div>
+  <div>
+    <label for="age">Age</label>
+    <input type="text" id="age" name="age" />
+  </div>
+  <div>
+    <label for="major">Major</label>
+    <input type="text" id="major" name="major" />
+  </div>
+  <div>
+    <label for="description">Description</label>
+    <input type="text" id="description" name="description" />
+  </div>
+  <div><button>submit</button></div>
+</form>
+{% endblock content%}
