@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{article.title}}</h1>
+<p>{{article.content}}</p>
+<div>
+<a href="{%url "board:update" article.pk%}"><button>EDIT</button></a>
+
+</div>
+<div>
+    <form action="{%url "board:delete" article.pk%}" method="POST">
+        {% csrf_token %}
+        <button onclick ="return confirm('real delete')">DELETE</button>
+    </form>
+</div>
+{% endblock content %}
