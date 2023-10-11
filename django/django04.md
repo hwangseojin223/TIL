@@ -111,3 +111,14 @@ print('c')
 Object Relational Mapping(객체-관계-매핑)  
 객체와 데이터베이스의 관계를 매핑해주는 도구
 ![Alt text](image.png)
+
+### 6. `python managelpy makemigrations <app_name>`
+
+project_name = BOARD3  
+app_name = board
+
+=>
+
+- board/urls.py, board/views.py
+- board3/urls.py
+- 등이 기본적인 코드를 어느정도 적어야 명령어가 작동한다.
