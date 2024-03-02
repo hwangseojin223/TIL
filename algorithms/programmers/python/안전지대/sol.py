@@ -20,4 +20,4 @@ def solution(board):
         return 0
     else:
         zero = all - len(safe)          
-        return zero
+        return zero 
