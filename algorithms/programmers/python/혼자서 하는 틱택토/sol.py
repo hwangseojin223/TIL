@@ -1,3 +1,5 @@
+# 100점 아님
+
 from collections import defaultdict
 
 def solution(board):
