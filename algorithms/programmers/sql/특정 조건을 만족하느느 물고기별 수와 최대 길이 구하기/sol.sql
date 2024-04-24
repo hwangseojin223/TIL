@@ -1,0 +1,27 @@
+SELECT COUNT(ID) AS FISH_COUNT, MAX(LENGTH) AS MAX_LENGTH, FISH_TYPE 
+FROM (SELECT IFNULL(LENGTH, 10) AS LENGTH, ID, FISH_TYPE
+    FROM FISH_INFO) AS F
+GROUP BY FISH_TYPE
+HAVING AVG(LENGTH)>=33
+ORDER BY FISH_TYPE ASC
+
+-- 1.CASE문
+-- CASE (조건 또는 값)
+--     WHEN 값1 THEN 표시값
+--     WHEN 값2 THEN 표시값
+-- ELSE 표시값
+-- END
+
+-- ex. SELECT 
+-- CASE A 
+--     WHEN '1' THEN a
+--     WHEN '2' THEN b
+-- ELSE c
+-- END
+-- FROM TABLE_NAME
+
+-- 2.IFNULL문
+-- IFNULL(값1, 값2)
+
+-- ex. SELECT IFNULL(price, 0) FROM BOOKS
+-- price값이 NULL이면 0, NULL이 아니면, price 값을 출력
